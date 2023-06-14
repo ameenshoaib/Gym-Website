@@ -1,7 +1,24 @@
 const menu = document.querySelector("#mobile-menu");
 const menuLinks = document.querySelector(".navbar__menu");
-const navLogo = document.querySelector(".navbar__logo");
+const links = document.querySelector(".navbar__link");
+const navLogo = document.querySelector("#navbar__logo");
 const body = document.querySelector("body");
+
+window.onscroll = function () {
+  myFunction();
+};
+
+var navlist = document.getElementById("navbar");
+var sticky = navlist.offsetTop;
+
+/* Function to stick the nav bar */
+function myFunction() {
+  if (window.pageYOffset >= sticky) {
+    navlist.classList.add("sticky");
+  } else {
+    navlist.classList.remove("sticky");
+  }
+}
 
 // Display mobile menu
 const mobileMenu = () => {
